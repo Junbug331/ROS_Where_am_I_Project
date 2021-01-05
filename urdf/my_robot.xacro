@@ -1,6 +1,7 @@
 <?xml version='1.0'?>
 
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
 
     <material name="red">
         <color rgba="0.8 0 0 1"/>
@@ -105,7 +106,7 @@
         </visual>
     </link>
 
-    <joint type="continuous" name="left_wheel_hinge">
+    <joint type="continuous" name="left_wheel_joint">
         <origin xyz="0 0.15 0" rpy="0 0 0"/>
         <child link="left_wheel"/>
         <parent link="chassis"/>
@@ -141,7 +142,7 @@
             <material name="green"/>
         </visual>
     </link>
-    <joint type="continuous" name="right_wheel_hinge">
+    <joint type="continuous" name="right_wheel_joint">
         <origin xyz="0 -0.15 0" rpy="0 0 0"/>
         <child link="right_wheel"/>
         <parent link="chassis"/>
